@@ -49,7 +49,7 @@ export default function Hero() {
             variant="overline"
             sx={{ color: 'primary.main', letterSpacing: 3, fontWeight: 800 }}
           >
-            Indian • Sri Lankan • Chinese
+            Restaurant & Cafe 
           </Typography>
           <Typography
             variant="h2"
@@ -60,7 +60,7 @@ export default function Hero() {
               color: 'common.white',
             }}
           >
-            Layer3 — Indian • Sri Lankan • Chinese in the heart of Jaffna
+            Layer3 — Dine in the heart of Jaffna
           </Typography>
           <Typography variant="h6" sx={{ fontWeight: 500, color: 'rgba(255,255,255,0.82)' }}>
             A modern, premium dine-in space where familiar flavors meet a clean,

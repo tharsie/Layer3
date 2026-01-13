@@ -52,7 +52,7 @@ export default function Home() {
 
       <Container sx={{ py: { xs: 6, md: 8 }, width: "100%" }}>
         <Grid container spacing={3} alignItems="stretch">
-          <Grid >
+          <Grid sx={{ ml: { xs: 3, sm: 2, md: 0 } }}>
             <SectionHeading
               overline="Our Story"
               title="Three floors, one Layer3 experience"
@@ -92,7 +92,7 @@ export default function Home() {
                 </Stack>
               </CardContent>
             </Card>
-            <Grid item xs={12} md={12} pt={12}>
+            <Grid item xs={12} md={12} pt={12} >
             <SectionHeading
               overline="Cuisine Trio"
               title="Indian • Sri Lankan • Chinese"
