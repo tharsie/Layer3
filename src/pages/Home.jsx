@@ -18,6 +18,13 @@ import RiceBowlIcon from '@mui/icons-material/RiceBowl'
 import RamenDiningIcon from '@mui/icons-material/RamenDining'
 import PlaceIcon from '@mui/icons-material/Place'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import LocalCafeIcon from '@mui/icons-material/LocalCafe'
+import BakeryDiningIcon from '@mui/icons-material/BakeryDining'
+import LocalBarIcon from '@mui/icons-material/LocalBar'
+import IcecreamIcon from '@mui/icons-material/Icecream'
+import CoffeeIcon from '@mui/icons-material/Coffee'
+import LocalDrinkIcon from '@mui/icons-material/LocalDrink'
+import BreakfastDiningIcon from '@mui/icons-material/BreakfastDining'
 
 import Hero from '../components/Hero'
 import SectionHeading from '../components/SectionHeading'
@@ -150,6 +157,95 @@ export default function Home() {
         <Divider sx={{ my: { xs: 6, md: 8 } }} />
 
         <SectionHeading
+          overline="Café"
+          title="Coffee, mojitos, waffles — sweet breaks"
+          subtitle="A lighter Layer3 moment: Italian coffees (cappuccino, latte), non-alcoholic mojitos, fresh waffles and pancakes, milkshakes, rolled ice creams, and daily pastries. Perfect for catch-ups and quiet pauses."
+        />
+        <Grid container spacing={2.2}>
+          <Grid item xs={12} md={6}>
+            <Card sx={{ height: '100%' }}>
+              <CardContent>
+                <Stack spacing={1.2}>
+                  <Stack direction="row" spacing={1.2} alignItems="flex-start">
+                    <LocalCafeIcon sx={{ color: 'primary.main', mt: 0.2 }} />
+                    <CoffeeIcon sx={{ color: 'primary.main', mt: 0.2 }} />
+                    <Box>
+                      <Typography sx={{ fontWeight: 900 }}>Italian coffees & warm sips</Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Espresso, cappuccino, latte, creamy hot chocolate, iced coffee — slow sips without the full-meal commitment.
+                      </Typography>
+                    </Box>
+                  </Stack>
+                  <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+                    <Chip label="Cappuccino" variant="outlined" />
+                    <Chip label="Latte" variant="outlined" />
+                    <Chip label="Italian coffees" variant="outlined" />
+                    <Chip label="Hot chocolate" variant="outlined" />
+                    <Chip label="Iced coffee" variant="outlined" />
+                  </Stack>
+                  <Typography variant="caption" color="primary.main" sx={{ fontWeight: 800 }}>
+                    Hours: Mon–Sun 08:00–21:00
+                  </Typography>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Card sx={{ height: '100%' }}>
+              <CardContent>
+                <Stack spacing={1.2}>
+                  <Stack direction="row" spacing={1.2} alignItems="flex-start">
+                    <BakeryDiningIcon sx={{ color: 'primary.main', mt: 0.2 }} />
+                    <Box>
+                      <Typography sx={{ fontWeight: 900 }}>Fresh pastries, waffles & desserts</Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Daily bakes, layered cakes, signature desserts, waffles, and pancakes — perfect for mid-morning breaks and afternoon treats.
+                      </Typography>
+                    </Box>
+                  </Stack>
+                  <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+                    <Chip label="Pastries" variant="outlined" />
+                    <Chip label="Signature cakes" variant="outlined" />
+                    <Chip label="Waffles" variant="outlined" />
+                    <Chip label="Pancakes" variant="outlined" />
+                    <Chip label="Light sandwiches" variant="outlined" />
+                    <Chip label="Salads" variant="outlined" />
+                  </Stack>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={12}>
+            <Card>
+              <CardContent>
+                <Stack spacing={1.2}>
+                  <Stack direction="row" spacing={1.2} alignItems="flex-start">
+                    <LocalBarIcon sx={{ color: 'primary.main', mt: 0.2 }} />
+                    <LocalDrinkIcon sx={{ color: 'primary.main', mt: 0.2 }} />
+                    <IcecreamIcon sx={{ color: 'primary.main', mt: 0.2 }} />
+                    <Box>
+                      <Typography sx={{ fontWeight: 900 }}>Mojitos, milkshakes & rolled ice creams</Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Non-alcoholic mojitos in fruity twists, classic milkshakes, and rolled ice creams made to order. Ask for seasonal flavors.
+                      </Typography>
+                    </Box>
+                  </Stack>
+                  <Stack direction="row" spacing={1} useFlexGap flexWrap="wrap">
+                    <Chip label="Mojitos (non-alcoholic)" variant="outlined" />
+                    <Chip label="Fruit mojitos" variant="outlined" />
+                    <Chip label="Milkshakes" variant="outlined" />
+                    <Chip label="Smoothies" variant="outlined" />
+                    <Chip label="Rolled ice creams" variant="outlined" />
+                  </Stack>
+                </Stack>
+              </CardContent>
+            </Card>
+          </Grid>
+        </Grid>
+
+        <Divider sx={{ my: { xs: 6, md: 8 } }} />
+
+        <SectionHeading
           overline="Signature Highlights"
           title="A curated preview"
           subtitle="This is a taste of what we’re known for — display-only, no ordering. Ask our team for today’s specials and seasonal favorites."
@@ -232,6 +328,9 @@ export default function Home() {
                     <Typography sx={{ fontWeight: 900 }}>Hours</Typography>
                     <Typography color="text.secondary">
                       Mon–Thu: 12:00–22:30 · Fri–Sun: 12:00–23:00
+                    </Typography>
+                    <Typography color="text.secondary">
+                      Café: Mon–Sun: 08:00–21:00
                     </Typography>
                   </Box>
                 </Stack>
