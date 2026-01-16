@@ -5,6 +5,7 @@ import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
 import ErrorBoundary from './components/ErrorBoundary'
+import { Analytics } from "@vercel/analytics/react"
 import './App.css'
 
 const Home = lazy(() => import('./pages/Home'))
@@ -25,6 +26,7 @@ function ScrollToTop() {
 export default function App() {
   return (
     <Box sx={{ minHeight: '100dvh', display: 'flex', flexDirection: 'column' }}>
+      <Analytics/>
       <ScrollToTop />
       <Navbar />
 
