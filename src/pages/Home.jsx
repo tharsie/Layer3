@@ -25,6 +25,8 @@ import IcecreamIcon from '@mui/icons-material/Icecream'
 import CoffeeIcon from '@mui/icons-material/Coffee'
 import LocalDrinkIcon from '@mui/icons-material/LocalDrink'
 import BreakfastDiningIcon from '@mui/icons-material/BreakfastDining'
+import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome'
+import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline'
 
 import Hero from '../components/Hero'
 import SectionHeading from '../components/SectionHeading'
@@ -43,6 +45,14 @@ export default function Home() {
   const signature = useMemo(() => highlights.slice(0, 6), [])
   const atmosphere = useMemo(
     () => galleryImages.filter((g) => g.category === 'Interiors').slice(0, 4),
+    [],
+  )
+  const featuredImage = useMemo(
+    () => galleryImages.find((g) => g.category === 'Events') ?? galleryImages[0],
+    [],
+  )
+  const cafeHero = useMemo(
+    () => galleryImages.find((g) => g.category === 'Interiors'),
     [],
   )
 
@@ -156,6 +166,89 @@ export default function Home() {
 
         <Divider sx={{ my: { xs: 6, md: 8 } }} />
 
+        {/* Featured Café peek section */}
+        <Box
+          sx={{
+            my: { xs: 4, md: 6 },
+            p: { xs: 3, md: 4 },
+            borderRadius: 3,
+            overflow: 'hidden',
+            background:
+              'radial-gradient(1200px 400px at 80% 0%, rgba(255, 203, 240, 0.18) 0%, rgba(255,255,255,0.85) 40%)',
+          }}
+        >
+          <Grid container spacing={3} alignItems="center">
+            <Grid item xs={12} md={6}>
+              <Stack spacing={2.5}>
+                <Typography variant="overline" sx={{ fontWeight: 800, letterSpacing: 2 }} color="primary">
+                  Featured
+                </Typography>
+                <Typography variant="h4" sx={{ fontWeight: 900 }}>
+                  A Sweet Peek into Layer3 Café
+                </Typography>
+                <Typography color="text.secondary">
+                  Watch how a simple idea becomes a show-stopping treat — smooth swirls,
+                  delicate finishes, and the final premium touch that makes every
+                  celebration feel special.
+                </Typography>
+                <Stack spacing={1.6}>
+                  <Stack direction="row" spacing={1.4} alignItems="center">
+                    <Box sx={{ width: 36, height: 36, borderRadius: '50%', bgcolor: 'rgba(233, 30, 99, 0.10)', display: 'grid', placeItems: 'center' }}>
+                      <AutoAwesomeIcon sx={{ color: 'primary.main' }} />
+                    </Box>
+                    <Typography>Handcrafted details with a premium finish</Typography>
+                  </Stack>
+                  <Stack direction="row" spacing={1.4} alignItems="center">
+                    <Box sx={{ width: 36, height: 36, borderRadius: '50%', bgcolor: 'rgba(33, 150, 243, 0.10)', display: 'grid', placeItems: 'center' }}>
+                      <PlayCircleOutlineIcon sx={{ color: 'primary.main' }} />
+                    </Box>
+                    <Typography>A quick glimpse into our café magic</Typography>
+                  </Stack>
+                  <Stack direction="row" spacing={1.4} alignItems="center">
+                    <Box sx={{ width: 36, height: 36, borderRadius: '50%', bgcolor: 'rgba(76, 175, 80, 0.10)', display: 'grid', placeItems: 'center' }}>
+                      <AccessTimeIcon sx={{ color: 'primary.main' }} />
+                    </Box>
+                    <Typography>Perfect inspiration before you place your order</Typography>
+                  </Stack>
+                </Stack>
+                <Stack direction="row" spacing={2} sx={{ pt: 1 }}>
+                  <Button component={RouterLink} to="/contact" variant="contained" color="primary">
+                    Order Now
+                  </Button>
+                  <Button component={RouterLink} to="/gallery" variant="outlined">
+                    View Café Gallery
+                  </Button>
+                </Stack>
+              </Stack>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <Box
+                sx={{
+                  
+                  borderRadius: 4,
+                  bgcolor: 'common.white',
+                  boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
+                }}
+              >
+                <CardMedia
+                  component="img"
+                  image={featuredImage?.src}
+                  alt={featuredImage?.alt || 'Layer3 featured café image'}
+                  sx={{
+                    display: 'block',
+                    width: '100%',
+                    height: { xs: 240, md: 320 },
+                    objectFit: 'cover',
+                    borderRadius: 3,
+                  }}
+                />
+              </Box>
+            </Grid>
+          </Grid>
+        </Box>
+
+        <Divider sx={{ my: { xs: 6, md: 8 } }} />
+
         <SectionHeading
           overline="Café"
           title="Coffee, mojitos, waffles — sweet breaks"
@@ -263,7 +356,7 @@ export default function Home() {
         <Grid container spacing={2.2}>
           {signature.map((item) => (
             <Grid key={item.id} item xs={12} sm={6} md={4}>
-              <HighlightCard item={item} />
+              <HighlightCard item={item} hover />
             </Grid>
           ))}
         </Grid>

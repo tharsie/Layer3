@@ -6,10 +6,24 @@ function spiceChip(spice) {
   return { label: 'Mild', color: 'default' }
 }
 
-export default function HighlightCard({ item }) {
+export default function HighlightCard({ item, hover = false }) {
   const spice = spiceChip(item.spice)
   return (
-    <Card sx={{ height: '100%' }}>
+    <Card
+      sx={{
+        height: '100%',
+        transition: 'transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease',
+        willChange: 'transform, box-shadow',
+        ...(hover && {
+          '&:hover': {
+            transform: 'translateY(-2px) scale(1.02)',
+            boxShadow: '0 14px 28px rgba(0,0,0,0.12)',
+            borderColor: 'primary.light',
+          },
+        }),
+      }}
+      variant={hover ? 'outlined' : undefined}
+    >
       <CardContent>
         <Stack spacing={1.2}>
           <Box sx={{ display: 'flex', justifyContent: 'space-between', gap: 2 }}>

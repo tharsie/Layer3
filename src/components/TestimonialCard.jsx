@@ -3,7 +3,17 @@ import FormatQuoteIcon from '@mui/icons-material/FormatQuote'
 
 export default function TestimonialCard({ quote, name, meta }) {
   return (
-    <Card sx={{ height: '100%' }}>
+    <Card
+      sx={{
+        height: '100%',
+        transition: 'transform 180ms ease, box-shadow 180ms ease',
+        willChange: 'transform, box-shadow',
+        '&:hover': {
+          transform: 'translateY(-2px) scale(1.02)',
+          boxShadow: '0 14px 28px rgba(0,0,0,0.12)',
+        },
+      }}
+    >
       <CardContent>
         <Stack spacing={1.4}>
           <FormatQuoteIcon sx={{ color: 'primary.main', opacity: 0.9 }} />
