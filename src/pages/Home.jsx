@@ -103,65 +103,65 @@ export default function Home() {
               </CardContent>
             </Card>
             <Grid item xs={12} md={12} pt={12} >
-            <SectionHeading
-              overline="Cuisine Trio"
-              title="Indian • Sri Lankan • Chinese"
-              subtitle="Three cuisines, one clean Layer3 approach — bold, balanced, and made for sharing."
-            />
-            <Grid container spacing={2}>
-              <Grid item xs={12}>
-                <Card>
-                  <CardContent>
-                    <Stack direction="row" spacing={1.4} alignItems="flex-start">
-                      <WhatshotIcon sx={{ color: 'primary.main', mt: 0.4 }} />
-                      <Box>
-                        <Typography sx={{ fontWeight: 900 }}>Indian</Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          Comfort classics refined — creamy gravies, tandoor-inspired
-                          roasts, and fragrant rice.
-                        </Typography>
-                      </Box>
-                    </Stack>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12}>
-                <Card>
-                  <CardContent>
-                    <Stack direction="row" spacing={1.4} alignItems="flex-start">
-                      <RiceBowlIcon sx={{ color: 'primary.main', mt: 0.4 }} />
-                      <Box>
-                        <Typography sx={{ fontWeight: 900 }}>Sri Lankan</Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          Locally grounded favorites — roast masala depth, coconut
-                          warmth, and Jaffna-style heat.
-                        </Typography>
-                      </Box>
-                    </Stack>
-                  </CardContent>
-                </Card>
-              </Grid>
-              <Grid item xs={12}>
-                <Card>
-                  <CardContent>
-                    <Stack direction="row" spacing={1.4} alignItems="flex-start">
-                      <RamenDiningIcon sx={{ color: 'primary.main', mt: 0.4 }} />
-                      <Box>
-                        <Typography sx={{ fontWeight: 900 }}>Chinese</Typography>
-                        <Typography variant="body2" color="text.secondary">
-                          Wok heat and clean sauces — glossy, crisp, and balanced for
-                          the table.
-                        </Typography>
-                      </Box>
-                    </Stack>
-                  </CardContent>
-                </Card>
+              <SectionHeading
+                overline="Cuisine Trio"
+                title="Indian • Sri Lankan • Chinese"
+                subtitle="Three cuisines, one clean Layer3 approach — bold, balanced, and made for sharing."
+              />
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <Card>
+                    <CardContent>
+                      <Stack direction="row" spacing={1.4} alignItems="flex-start">
+                        <WhatshotIcon sx={{ color: 'primary.main', mt: 0.4 }} />
+                        <Box>
+                          <Typography sx={{ fontWeight: 900 }}>Indian</Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Comfort classics refined — creamy gravies, tandoor-inspired
+                            roasts, and fragrant rice.
+                          </Typography>
+                        </Box>
+                      </Stack>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={12}>
+                  <Card>
+                    <CardContent>
+                      <Stack direction="row" spacing={1.4} alignItems="flex-start">
+                        <RiceBowlIcon sx={{ color: 'primary.main', mt: 0.4 }} />
+                        <Box>
+                          <Typography sx={{ fontWeight: 900 }}>Sri Lankan</Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Locally grounded favorites — roast masala depth, coconut
+                            warmth, and Jaffna-style heat.
+                          </Typography>
+                        </Box>
+                      </Stack>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={12}>
+                  <Card>
+                    <CardContent>
+                      <Stack direction="row" spacing={1.4} alignItems="flex-start">
+                        <RamenDiningIcon sx={{ color: 'primary.main', mt: 0.4 }} />
+                        <Box>
+                          <Typography sx={{ fontWeight: 900 }}>Chinese</Typography>
+                          <Typography variant="body2" color="text.secondary">
+                            Wok heat and clean sauces — glossy, crisp, and balanced for
+                            the table.
+                          </Typography>
+                        </Box>
+                      </Stack>
+                    </CardContent>
+                  </Card>
+                </Grid>
               </Grid>
             </Grid>
           </Grid>
-          </Grid>
 
-          
+
         </Grid>
 
         <Divider sx={{ my: { xs: 6, md: 8 } }} />
@@ -224,7 +224,7 @@ export default function Home() {
             <Grid item xs={12} md={6}>
               <Box
                 sx={{
-                  
+
                   borderRadius: 4,
                   bgcolor: 'common.white',
                   boxShadow: '0 12px 40px rgba(0,0,0,0.12)',
@@ -385,18 +385,55 @@ export default function Home() {
 
         <Divider sx={{ my: { xs: 6, md: 8 } }} />
 
+
         <SectionHeading
           overline="Testimonials"
           title="What guests say"
           subtitle="Real-sounding notes from guests who came for the food — and stayed for the comfort."
         />
-        <Grid container spacing={2.2}>
-          {testimonials.slice(0, 4).map((t) => (
-            <Grid key={t.name} item xs={12} sm={6} md={3}>
-              <TestimonialCard {...t} />
-            </Grid>
-          ))}
-        </Grid>
+
+        <Box
+          sx={{
+            position: "relative",
+            overflow: "hidden",
+            width: "100%",
+            py: 1,
+            maskImage:
+              "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+            WebkitMaskImage:
+              "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              width: "max-content",
+              animation: "testimonialScroll 22s linear infinite",
+              "@keyframes testimonialScroll": {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+              "&:hover": {
+                animationPlayState: "paused",
+              },
+            }}
+          >
+
+            {[...testimonials.slice(0, 4), ...testimonials.slice(0, 4)].map((t, idx) => (
+              <Box
+                key={`${t.name}-${idx}`}
+                sx={{
+                  flex: "0 0 auto",
+                  width: { xs: 280, sm: 320, md: 300 },
+                  mx: 1.2,
+                }}
+              >
+                <TestimonialCard {...t} />
+              </Box>
+            ))}
+          </Box>
+        </Box>
+
 
         <Divider sx={{ my: { xs: 6, md: 8 } }} />
 

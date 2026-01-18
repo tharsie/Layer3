@@ -29,4 +29,16 @@ export const testimonials = [
     name: 'S. Praveen',
     meta: 'Local guide recommendation',
   },
+  {
+    quote:
+      'Clean, modern, and consistent. Layer3 is now our go-to place when friends visit Jaffna.',
+    name: 'S. Praveen',
+    meta: 'Local guide recommendation',
+  },
+  {
+    quote:
+      'Clean, modern, and consistent. Layer3 is now our go-to place when friends visit Jaffna.',
+    name: 'S. Praveen',
+    meta: 'Local guide recommendation',
+  },
 ]
