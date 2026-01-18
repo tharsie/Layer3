@@ -65,7 +65,7 @@ export default function Home() {
           <Grid sx={{ ml: { xs: 3, sm: 2, md: 0 } }}>
             <SectionHeading
               overline="Our Story"
-              title="Three floors, one Layer3 experience"
+              title="Three floors, one experience"
               subtitle="Layer3 is built for Jaffna: a main Restaurant floor for Indian • Sri Lankan • Chinese dining, a Café for slower sips and sweet bites, and an open-air floor for breezy evenings. Premium, minimal, and always welcoming."
               action={
                 <Button
@@ -409,7 +409,7 @@ export default function Home() {
                   <Box>
                     <Typography sx={{ fontWeight: 900 }}>Location</Typography>
                     <Typography color="text.secondary">
-                      Example Street, Jaffna, Sri Lanka
+                      Ramanathan Road, Jaffna, Sri Lanka
                     </Typography>
                   </Box>
                 </Stack>
