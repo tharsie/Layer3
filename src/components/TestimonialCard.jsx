@@ -6,6 +6,7 @@ export default function TestimonialCard({ quote, name, meta }) {
     <Card
       sx={{
         height: '100%',
+        boxShadow: 'none',
         transition: 'transform 180ms ease, box-shadow 180ms ease',
         willChange: 'transform, box-shadow',
         '&:hover': {
@@ -13,6 +14,8 @@ export default function TestimonialCard({ quote, name, meta }) {
           boxShadow: '0 14px 28px rgba(0,0,0,0.12)',
         },
       }}
+      elevation={0}
+      variant="outlined"
     >
       <CardContent>
         <Stack spacing={1.4}>
